@@ -13,13 +13,18 @@
     "256": "icons/logo-trans-256.png"
   },
 
-  "browser_action": {
+  "background": {
+    "scripts": ["active.js"],
+    "persistent": false
+  },
+  "page_action": {
     "default_icon": "icons/logo-square-64.png",
     "default_popup": "popup.htm",
     "default_title": "Configure and get your referral URL for a Toptal page"
   },
 
   "permissions": [
-    "activeTab"
+    "activeTab",
+    "declarativeContent"
   ]
 }
