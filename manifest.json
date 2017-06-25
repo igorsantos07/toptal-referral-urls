@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+  "version": "1.0",
+
+  "name": "Toptal Referral URLs",
+  "short_name": "Toptal URLs",
+  "description": "Copies your Toptal Referral URL for any toptal.com link",
+
+  "icons": {
+    "16": "icons/favicon-16.png",
+    "48": "icons/logo-settings-48.png",
+    "128": "icons/logo-trans-128.png",
+    "256": "icons/logo-trans-256.png"
+  },
+
+  "browser_action": {
+    "default_icon": "icons/logo-square-64.png",
+    "default_popup": "popup.htm",
+    "default_title": "Configure and get your referral URL for a Toptal page"
+  },
+
+  "permissions": [
+    "activeTab"
+  ]
+}
