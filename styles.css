@@ -13,7 +13,8 @@
     --font-secondary: "Helvetica Neue", Helvetica, serif;
     --radius-small: 4px;
     --radius-medium: 10px;
-    --padding: 7px 15px;
+    --space: 15px;
+    --padding: 7px var(--space);
 }
 
 /** Extracted from the original Toptal site */
@@ -26,6 +27,7 @@
 
 body {
     width: 400px;
+    margin: 10px 10px 0 10px;
 }
 
 body, input, textarea {
@@ -38,7 +40,7 @@ textarea {
 
 h1 {
     color: var(--blue);
-    text-align: center;
+    margin: var(--space) 0;
 }
 h3 {
     color: var(--gray);
@@ -49,14 +51,7 @@ section {
     border: 1px solid var(--gray);
     border-radius: var(--radius-medium);
     padding: 10px 20px;
-    margin-bottom: 10px;
-}
-section:not(:last-of-type) {
-    margin-bottom: 20px;
-}
-
-legend {
-    padding: 0 5px;
+    margin-bottom: var(--space);
 }
 
 input, textarea {
@@ -84,6 +79,7 @@ button {
     text-shadow: var(--green-dark) 0 1px 0;
     font-weight: 600;
     color: white;
+    cursor: pointer;
 }
 
 section main {
@@ -93,6 +89,27 @@ section main {
 }
 section main input, section main textarea { flex: 1 0 0; }
 section main button { flex: 0 0 0; }
+
+footer {
+    background-color: var(--blue);
+    color: white;
+    text-align: center;
+    padding: 5px 0;
+    margin: 0 -10px; /* offsets body margin */
+    font-size: 12px;
+}
+footer ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+}
+footer ul li {
+    flex: 1 0;
+}
+footer a {
+    color: white;
+    font-weight: bold;
+}
 
 #notification {
     opacity: 0;
