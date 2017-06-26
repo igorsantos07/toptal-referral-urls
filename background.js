@@ -23,7 +23,9 @@ chrome.contextMenus.removeAll()
 chrome.contextMenus.create({
   id: 'copy',
   title: 'Copy URL with my referral hashtag',
-  contexts: ['page','link']
+  contexts: ['page','link'],
+  documentUrlPatterns: ['*://*.toptal.com/*'],
+  targetUrlPatterns: ['*://*.toptal.com/*']
 })
 
 const $body = document.querySelector('body')
