@@ -1,4 +1,5 @@
 :root {
+    --blue-light : #E6EEF8;
     --blue       : #3863A0;
     --green-light: #4FD3AA; /* taken from button styles */
     --green      : #3DBE8B;
@@ -6,6 +7,8 @@
     --green-grad : linear-gradient(#33B481, #23A06E);  /* taken from button styles */
     --gray       : #A9A9A9;
     --black      : #303030;
+    --red        : #DC4D4D;
+    --red-light  : #F4C9C9;
     --font-primary: "Proxima Nova", proxima-nova, Arial, sans-serif;
     --font-secondary: "Helvetica Neue", Helvetica, serif;
     --radius-small: 4px;
@@ -21,8 +24,16 @@
     font-weight: 400
 }
 
-body, input {
+body {
+    width: 400px;
+}
+
+body, input, textarea {
     font: 15px var(--font-primary);
+}
+textarea {
+    font-size: 12px;
+    width: auto;
 }
 
 h1 {
@@ -48,13 +59,15 @@ legend {
     padding: 0 5px;
 }
 
-input {
+input, textarea {
     border: 1px solid var(--gray);
     padding: var(--padding);
+    padding-left: 3px;
+    padding-right: 3px;
     border-radius: var(--radius-small);
     margin-right: 10px;
 }
-input[disabled] {
+input[disabled], textarea[disabled] {
     background-color: #EBEBEB; /* the default "disabled" color, on grayscale */
 }
 input#hashtag {
@@ -62,14 +75,15 @@ input#hashtag {
 }
 
 button {
+    padding: var(--padding);
+    flex: 0 0 0;
     background: var(--green-grad);
     border: 1px solid var(--green-dark);
     border-radius: var(--radius-small);
     box-shadow: inset var(--green-light) 0 1px;
     text-shadow: var(--green-dark) 0 1px 0;
+    font-weight: 600;
     color: white;
-    padding: var(--padding);
-    flex: 0 0 0;
 }
 
 section main {
@@ -77,5 +91,33 @@ section main {
     flex-wrap: nowrap;
     align-items: center;
 }
-section main input { flex: 1 0 0; }
+section main input, section main textarea { flex: 1 0 0; }
 section main button { flex: 0 0 0; }
+
+#notification {
+    opacity: 0;
+    transition: opacity 150ms ease;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    border: 1px solid var(--gray);
+    border-radius: var(--radius-small);
+}
+#notification.display {
+    opacity: 1;
+}
+#notification.success {
+    border-color: var(--green-dark);
+    background-color: var(--green-light);
+    color: var(--green-dark);
+}
+#notification.info {
+    border-color: var(--blue);
+    background-color: var(--blue-light);
+    color: var(--blue);
+}
+#notification.error {
+    border-color: var(--red);
+    background-color: var(--red-light);
+    color: var(--red);
+}

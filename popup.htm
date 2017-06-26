@@ -8,11 +8,13 @@
 <body>
     <h1>Toptal Referral URLs</h1>
 
+    <section id="notification"></section>
+
     <section>
         <h3><label for="url">Referral URL for this page</label></h3>
         <main>
-            <input type="text" title="Referral URL" id="url" disabled/>
-            <button>Copy</button>
+            <textarea title="Referral URL" id="url" disabled></textarea>
+            <button id="copy">Copy</button>
         </main>
     </section>
 
@@ -20,8 +22,10 @@
         <h3><label for="hashtag">My referral hashtag</label></h3>
         <main>
             # <input type="text" id="hashtag" title="My referral hashtag"/>
-            <button>Save</button>
+            <button id="save">Save</button>
         </main>
     </section>
+
+    <script type="text/javascript" src="popup.js"></script>
 </body>
 </html>
